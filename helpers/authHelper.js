@@ -1,6 +1,6 @@
 // we will create 2 function in this first to encrypt and 2 to decrypt
 
-import bcrypt, { compare, hash } from 'bcrypt'
+import bcrypt from 'bcrypt'
 
 
 export const hashPassword = async(password) =>{
@@ -11,7 +11,7 @@ export const hashPassword = async(password) =>{
     }catch(error){
         console.log(error);
     }
-}
+};
 export const comparePassword = async(password,hashedPassword) =>{
     return bcrypt.compare(password,hashedPassword);
 }
