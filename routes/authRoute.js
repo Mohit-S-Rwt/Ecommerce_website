@@ -18,6 +18,11 @@ router.post('/login',loginController);
 // test routes
 router.get('/test',requireSignIn, isAdmin, testController)
 
+// protected routes
+router.get('./user-auth', requireSignIn, (req , res)=>{
+    res.status(200).send({ok:true});
+})
+
 
 
 

@@ -1,20 +1,38 @@
-import React from 'react'
-import Header from "./Header"; 
+import React from "react";
+import Header from "./Header";
 // functional components hai header and footer
-import Footer from  "./Footer"
+import Footer from "./Footer";
+import { Helmet } from "react-helmet";
 
-const Layout = ({children}) => {
+import {Toaster} from 'react-hot-toast'
+import "react-toastify/dist/ReactToastify.css";
+
+const Layout = ({ children, title, description, keywords, author }) => {
   return (
     <div>
-     <Header/>
-      <main style={{minHeight :"80vh"}}>
-      {children}
-      </main>
-        
-      <Footer/>
-     
-    </div>
-  )
-}
+      <Helmet>
+        <meta charSet="utf-8" />
 
+        <meta name="description" content="{description}" />
+        <meta name="keywords" content="{keywords}" />
+        <meta name="author" content="{author}" />
+        <title>{title}</title>
+      </Helmet>
+      <Header />
+      <main style={{ minHeight: "70vh" }}>
+        <Toaster/>
+        {children}
+        </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+Layout.defaultProps = {
+  title: "Ecommerce app shop-now",
+  description: "mern Stack project",
+  keywords: "mern, reacr, node, mongoDb",
+  author: "mohit singh rawat",
+};
 export default Layout;
