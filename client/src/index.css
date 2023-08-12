@@ -118,4 +118,9 @@ border-bottom: 1px solid #ffefba;
 }
 
 /* ========================= */
-/* =========Register page== */
+/* =========product list  page== */
+
+.product-link{
+  text-decoration: none !important;
+  color: black !important;
+}
