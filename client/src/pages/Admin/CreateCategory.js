@@ -27,7 +27,7 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      
       toast.error("something went wrong in input forms ");
     }
   };
@@ -40,7 +40,7 @@ const CreateCategory = () => {
         setCategories(data.category);
       }
     } catch (error) {
-      console.log(error);
+     
       toast.error("something went wrong in getting category");
     }
   };
@@ -53,7 +53,7 @@ const CreateCategory = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      console.log(e);
+      
       const { data } = await axios.put(
         `/api/v1/category/update-category/${selected._id}`,
         { name: updatedName }
@@ -68,7 +68,7 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+     
       toast.error("something went wrong");
     }
   };
@@ -92,7 +92,7 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      
       toast.error("something went wrong");
     }
   };

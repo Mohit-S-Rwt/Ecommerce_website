@@ -60,7 +60,7 @@ export const registerController = async (req, res) => {
       user,
     });
   } catch (error) {
-    console.log(error);
+    
     res.status(500).send({
       success: false,
       message: "Error in registration",
@@ -117,7 +117,7 @@ export const loginController = async (req, res) => {
       token,
     });
   } catch (error) {
-    console.log(error);
+    
     res.status(500).send({
       success: false,
       message: "error in login",
@@ -155,7 +155,7 @@ export const forgotPasswordController = async (req, res) => {
       message: "Password Reset Successfully",
     });
   } catch (error) {
-    console.log(error);
+    
     res.status(500).send({
       success: forgotPasswordController,
       message: "Something went wrong",
@@ -178,7 +178,7 @@ export const isAdmin = async (req, res, next) => {
       next();
     }
   } catch (error) {
-    console.log(error);
+    
     res.status(401).send({
       error,
       message: "errror in middleware",
@@ -190,7 +190,7 @@ export const testController = (req, res) => {
   try {
     res.send("protect Route");
   } catch (error) {
-    console.log(error);
+    
     res.send;
   }
 };
@@ -220,7 +220,7 @@ export const updateProfileController = async (req, res) => {
       message: "profile update successfully ",
     });
   } catch (error) {
-    console.log(error);
+    
     res.status(400).send({
       success: false,
       message: "error while updating profile",
@@ -238,7 +238,7 @@ export const getOrdersController = async (req, res) => {
       .populate("buyer", "name");
     res.json(orders);
   } catch (error) {
-    console.log(error);
+    
     res.status(500).send({
       success: false,
       message: "Error WHile Geting Orders",
@@ -258,7 +258,7 @@ export const getAllOrdersController = async (req, res) => {
       .sort({ createdAt: "-1" });
     res.json(orders);
   } catch (error) {
-    console.log(error);
+    
     res.status(500).send({
       success: false,
       message: "Error WHile Geting Orders",
@@ -278,7 +278,7 @@ export const orderStatusController = async (req, res) => {
     );
     res.json(orders);
   } catch (error) {
-    console.log(error);
+    
     res.status(500).send({
       success: false,
       message: "Error While Updateting Order",
